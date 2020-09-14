@@ -63,6 +63,9 @@ $tpl = new \myproject\subfolder\myViewTemplate(); // And life became easy.
 
 ```
 
+# You may want it...
+To construct a no-module framework like this one : [0orZ framework](https://github.com/flavi1/0orZ-framework)
+
 # todo
 
 An optionnal PSR4 loader that allow static class auto initialization (a "magic" method "__init()")
