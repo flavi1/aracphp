@@ -1,8 +1,8 @@
 <?php
 namespace aracphp;
-use aracphp\ressourceClassLoader;
+use aracphp\resourceClassLoader;
 
-abstract class aRessourceClassFactory {
+abstract class aResourceClassFactory {
 
 	abstract static public function tryToDeclare($NS_Prefix, $className, $path);
 	
@@ -11,7 +11,7 @@ abstract class aRessourceClassFactory {
 	}
 	
 	static public function implement() {
-		ressourceClassLoader::implement(static::class);
+		resourceClassLoader::implement(static::class);
 	}
 	
 	static public function isOverridableByTheme() {
