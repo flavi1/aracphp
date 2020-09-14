@@ -46,7 +46,10 @@ class templateFactory extends \aracphp\aResourceClassFactory {
     
     public function tryToDeclare($namespace_prefix, $className, $path) {
         $fileName = substr($className, 0, - strlen(self::NS_Suffix())).'.tpl'; 
-        $fileName = str_replace('\\', '/', $fileName); // will return 'subfolder\myView.tpl';
+        $fileName = str_replace('\\', '/', $fileName);
+        // $fileName = 'subfolder\myView.tpl';
+        
+        $fullPath = $path.$filePath;
         
         // Then you may want to compile a cache php file
         // for a class called "\myproject\subfolder\myViewTemplate"
