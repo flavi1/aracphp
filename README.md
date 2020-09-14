@@ -9,4 +9,5 @@ aracphp is :
 # todo
 An optionnal PSR4 loader that allow static class auto initialization (a "magic" method "__init()")
 (see https://www.php.net/manual/fr/language.oop5.autoload.php#86195)
-Should not enter inconflict with composer if presents
+
+Should not enter in conflict with composer if presents
