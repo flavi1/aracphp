@@ -1,10 +1,10 @@
 <?php
 namespace aracphp;
-use aracphp\aRessourceClassFactory;
+use aracphp\aResourceClassFactory;
 
 
 
-class ressourceClassLoader {
+class resourceClassLoader {
 	
 	static $singletons = [];	// NS_suffix to classFactory instance
 	
@@ -30,7 +30,7 @@ echo 'TRY to declare '.$className;
 			$test = substr($className, - strlen($suffix));
 echo "\n".$test.' == '.$suffix.' ? '.var_export($test == $suffix, true).' !';
 			if($test == $suffix)
-				return self::buildRessource($factory, $className);
+				return self::buildResource($factory, $className);
 		}
 	}
 	
@@ -52,7 +52,7 @@ echo "\n".$test.' == '.$suffix.' ? '.var_export($test == $suffix, true).' !';
 		return self::prefixWith($str, '\\');
 	}
 	
-	public static function buildRessource($factory, $className) {
+	public static function buildResource($factory, $className) {
 		$themePath = self::$config['THEME_PATH'];
 		$vendorPath = self::$config['VENDOR_PATH'];
 		$className = self::prefixWith($className, '\\');
@@ -70,7 +70,7 @@ echo "\n".$test.' == '.$suffix.' ? '.var_export($test == $suffix, true).' !';
 	
 	public static function register($prepend = false) {
 echo 'REGITRED!';
-		spl_autoload_register('\\aracphp\\ressourceClassLoader::loadClass', false, $prepend);
+		spl_autoload_register('\\aracphp\\resourceClassLoader::loadClass', false, $prepend);
 	}
 	
 }
