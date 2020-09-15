@@ -3,7 +3,7 @@ namespace \aracphp;
 
 class paths {
 	
-	static protected $singleton = null;
+    static protected $singleton = null;
 	
     static protected $paths = [
         'root' => null,
