@@ -15,12 +15,12 @@ class paths {
     static protected $writeProtect = false;
     
     static public function addPathSetter(string $pathLabel, string $default = null) {
-		self::$paths[$pathLabel] = $default;
-	}
+	self::$paths[$pathLabel] = $default;
+    }
 	
-	static function init() {
-		return new self();
-	}
+    static function init() {
+	return new self();
+    }
     
     public function __construct() {
 		if(!is_null(self::$singlton))
