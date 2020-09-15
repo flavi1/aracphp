@@ -15,6 +15,12 @@ Then, we want theme template to override vendor template.
 ```
 <?php
 
+aracphp\paths::init()
+        ->root(__DIR__)
+        ->www('www')
+        ->vendor('vendor')
+        ->theme('themes/default')
+        ->finalize();
 
 aracphp\ressourceClassLoader::addPath('\myproject', 'myname/myproject');
 
