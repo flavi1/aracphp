@@ -4,7 +4,8 @@ All Resources Are Classes
 aracphp is :
 * an extremly thin php library to organize your code as simple as possible
 * a design pattern conforms to namespaces against modules approch (see [module vs namespaces on wikipedia](https://en.wikipedia.org/wiki/Module_pattern#Namespaces))
-* an autoloader combined with a little abstract class : aResourceClassFactory
+* an autoloader combined with a little abstract class : aResourceClassFactory to make your own class factories.
+* a simple "paths class" to register your application paths
 
 # Example
 We have :
