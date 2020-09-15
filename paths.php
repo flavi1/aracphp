@@ -17,6 +17,10 @@ class paths {
     static public function addPathSetter(string $pathLabel, string $default = null) {
 		self::$paths[$pathLabel] = $default;
 	}
+	
+	static function init() {
+		return new self();
+	}
     
     public function __construct() {
 		if(!is_null(self::$singlton))
@@ -26,7 +30,7 @@ class paths {
 		}
 	}
 	
-	public function build() {
+	public function finalize() {
 		foreach(self::$paths as $pathLabel => $def)
 			if(!$def)
 				throw new Exception('Error : '.$pathLabel.' is not set!');
@@ -37,9 +41,14 @@ class paths {
 		if(!isset(self::$paths[$pathLabel]))
 			throw new Exception('Error : '.$pathLabel.' unknown label path.');
 		if(!isset($args[0]))
-			return self::$paths[$pathLabel];
-		elseif(!self::$writeProtect)
+			if(strpos(self::$paths[$pathLabel], '/') === 0)
+				return self::$paths[$pathLabel];
+			else
+				return self::$paths['root'].self::$paths[$pathLabel];
+		elseif(!self::$writeProtect) {
 			self::$paths[$pathLabel] = $args[0];
+			return $this;
+		}
 		else
 			throw new Exception('Error : Paths already builded.');
 	}
