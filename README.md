@@ -30,6 +30,7 @@ aracphp\paths::init()
 // If it's a relative path, it will give you full root/custom path
 // If it's absolute (begin by '/'), it will give you what you gave.
 
+// Next, we add a ressource path on the class loader.
 aracphp\ressourceClassLoader::addPath('\myproject', 'myname/myproject');
 
 class templateFactory extends \aracphp\aResourceClassFactory {
