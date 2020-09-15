@@ -21,14 +21,15 @@ aracphp\paths::init()
         ->vendor('vendor')
         ->theme('themes/default')
         ->finalize();
-
-// Now use it, when you want to access to a path
-// exemple aracphp\paths::www() will return __DIR__.'/www'
-// Add a custom folder?
-// Do arac\paths::addPathSetter('custom', [$default = null]) BEFORE finalize.
-// Then set it in the chain ->custom('my/custom/path').
-// If it's a relative path, it will give you full root/custom path
-// If it's absolute (begin by '/'), it will give you what you gave.
+/*
+   Now use it, when you want to access to a path
+   exemple aracphp\paths::www() will return __DIR__.'/www'
+   Add a custom folder?
+   Do arac\paths::addPathSetter('custom', [$default = null]) BEFORE finalize.
+   Then set it in the chain ->custom('my/custom/path').
+   If it's a relative path, it will give you full root/custom path
+   If it's absolute (begin by '/'), it will give you what you gave.
+*/
 
 // Next, we add a ressource path on the class loader.
 aracphp\ressourceClassLoader::addPath('\myproject', 'myname/myproject');
