@@ -49,7 +49,7 @@ class paths {
 			else
 				return self::$paths['root'].self::$paths[$pathLabel];
 		elseif(!self::$writeProtect) {
-			self::$paths[$pathLabel] = $args[0];
+			self::$paths[$pathLabel] = (string) $args[0];
 			return $this;
 		}
 		else
