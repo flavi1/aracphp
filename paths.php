@@ -15,7 +15,10 @@ class paths {
     static protected $writeProtect = false;
     
     static public function addPathSetter(string $pathLabel, string $default = null) {
-	self::$paths[$pathLabel] = $default;
+	if(!self::$writeProtect)
+	    self::$paths[$pathLabel] = $default;
+	else
+	    throw new Exception('Error : Paths already sets.');
     }
 	
     static function init() {
@@ -24,7 +27,7 @@ class paths {
     
     public function __construct() {
 		if(!is_null(self::$singlton))
-			throw new Exception('Error : Paths already defined.');
+			throw new Exception('Error : Paths already sets.');
 		else {
 			self::$singleton = $this;
 		}
