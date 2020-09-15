@@ -81,7 +81,8 @@ $tpl = new \myproject\subfolder\myViewTemplate(); // And life became easy.
 ```
 
 # You may want it...
-To construct a no-module framework like this one : [0orZ framework](https://github.com/flavi1/0orZ-framework)
+To construct a no-module framework like this one : [ZoZ framework](https://github.com/flavi1/0orZ-framework)
+Consider it as a microscopic framework to make frameworks. 
 
 # todo
 
