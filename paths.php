@@ -12,7 +12,7 @@ class paths {
         'theme' => 'themes/default',
     ];
     
-    static protected $writeProtect = false
+    static protected $writeProtect = false;
     
     static public function addPathSetter(string $pathLabel, string $default = null) {
 		self::$paths[$pathLabel] = $default;
